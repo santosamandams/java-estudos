@@ -1,17 +1,21 @@
 package br.com.estudos.primeirasemana;
-//import jakarta.validation.constraints.NotBlank;
 
 public class Funcionario {
 
-//    @NotBlank("O nome do funcionário não pode ser nulo/vazio")
     String nome;
     String cargo;
     Double salario;
 
     public Funcionario(String nome, String cargo, Double salario) {
+
+        if (salario <= 0.0) {
+            throw new IllegalArgumentException("salario nao pode ser negativo ou zero");
+        }
         this.nome = nome;
         this.cargo = cargo;
         this.salario = salario;
+//        nome = "Teste this";
+//        System.out.println(nome);
     }
 
     public String getNome(){

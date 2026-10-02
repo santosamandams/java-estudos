@@ -14,10 +14,10 @@ public class Main {
         System.out.println("Cargo: " + ana.getCargo());
         System.out.println("Salario: " + ana.getSalario());
 
-        System.out.println("---------------------------------");
+        System.out.println("---------------------------------" + ana.getNome());
 
-        Funcionario joel = new Funcionario("", "Analista", -4000.0);
-        joel.exibirDados();
+//        Funcionario joel = new Funcionario("", "Analista", -4000.0);
+//        joel.exibirDados();
     }
 
 }
