@@ -43,6 +43,7 @@ public class Funcionario {
         System.out.println("Nome: " + nome);
         System.out.println("Cargo: " + cargo);
         System.out.println("Salário atual: " + salario);
+        System.out.println("----");
     }
 
     public void calcularSalarioAnual(){
