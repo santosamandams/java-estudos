@@ -1,11 +1,12 @@
 package br.com.estudos.segundasemana;
 
-public class Funcionario {
+public class Funcionario implements Identificavel {
     String nome;
     String cargo;
     Double salario;
+    String id;
 
-    public Funcionario(String nome, String cargo, Double salario) {
+    public Funcionario(String nome, String cargo, Double salario, String id) {
 
         if (salario <= 0.0) {
             throw new IllegalArgumentException("salario nao pode ser negativo ou zero");
@@ -13,6 +14,7 @@ public class Funcionario {
         this.nome = nome;
         this.cargo = cargo;
         this.salario = salario;
+        this.id = id;
     }
 
 
@@ -51,4 +53,9 @@ public class Funcionario {
         System.out.println("Salário anual: " + salarioAnual);
     }
 
+    @Override
+    public String getIdentificador() {
+        System.out.println("Nome: " + nome);
+        return this.id;
+    }
 }

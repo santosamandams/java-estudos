@@ -1,4 +1,5 @@
 package br.com.estudos.segundasemana;
 
-public class Identificavel {
+public interface Identificavel {
+    String getIdentificador();
 }
