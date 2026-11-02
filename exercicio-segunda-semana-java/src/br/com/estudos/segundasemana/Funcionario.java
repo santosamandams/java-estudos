@@ -32,7 +32,7 @@ public class Funcionario implements Identificavel {
 
     public void aumentarSalario(double percentual){
         if (percentual <= 0.0 || percentual > 100.0) {
-            System.out.println("Percentual inválido. O aumento não será aplicado.");
+            System.out.println("Percentual inválido. O aumento não foi aplicado.");
             return;
         }
 

@@ -185,9 +185,20 @@ public class Main {
                 }
                 break;
             case 5:
-                // code block
+                System.out.println("opçao escolhida: " + opcao + " - Aumentar salário");
+                System.out.println("Digite o percentual de aumento para o salario: ...");
+                int novoSalario = leitor.nextInt();
+                funcionarios.get(0).aumentarSalario(novoSalario);
+                funcionarios.get(0).exibirDados();
             case 6:
                 System.out.println("opçao escolhida: " + opcao + " - Listar funcionários por cargo");
+                System.out.println("Digite o carga para buscar: ...");
+                String cargoBuscar = leitor.next();
+                for (Funcionario f : funcionarios) {
+                    if (f.getCargo().contains(cargoBuscar)) {
+                        f.exibirDados();
+                    }
+                }
                 break;
             case 7:
                 System.out.println("opçao escolhida: " + opcao + " - Exibir quantidade");
