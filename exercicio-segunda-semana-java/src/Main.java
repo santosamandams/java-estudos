@@ -44,15 +44,15 @@ public class Main {
         Map<String, Funcionario> funcionariosMap = new HashMap<>();
         funcionariosMap.put("1", funcionarioJoel);
         funcionariosMap.put("2", funcionarioJoao);
-        System.out.println(funcionariosMap.get("0001").getNome());
-        System.out.println(funcionariosMap.get("0002").getNome());
+        System.out.println(funcionariosMap.get("1").getNome());
+        System.out.println(funcionariosMap.get("2").getNome());
 
         // for e for-each
         // percorre uma lista
         System.out.println(" ex");
 //        for (Funcionario f: funcionarios){
 //            f.exibirDados();
-        funcionariosMap.get("0001").getIdentificador();
+        funcionariosMap.get("1").getIdentificador();
 //        }
 
 
@@ -113,8 +113,14 @@ public class Main {
         System.out.println("Quantidade de funcionarios atual: " + funcionarios.size());
 
 //        Exercício 8 — Interface
+        System.out.println("---- Ex08: ");
 //        funcionarioAmora.getIdentificador();
-        funcionariosMap.get("0002").getIdentificador();
-//        funcionariosMap.forEach();
+        funcionariosMap.get("1").getIdentificador();
+        for (Map.Entry<String, Funcionario> entrada : funcionariosMap.entrySet()) {
+            String chave = entrada.getKey();
+            Funcionario f = entrada.getValue();
+
+            System.out.println("Chave: " + chave + "Nome: " + f.getNome());
+        }
     }
 }
