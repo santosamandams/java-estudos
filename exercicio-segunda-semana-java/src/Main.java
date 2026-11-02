@@ -1,6 +1,7 @@
 import br.com.estudos.segundasemana.Funcionario;
 
 import java.util.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,6 +10,7 @@ public class Main {
         Funcionario funcionarioAmora = new Funcionario("Amora", "Segurança", 6000.0, "3");
         Funcionario funcionarioLara = new Funcionario("Lara", "Estudante", 2000.0, "4");
         Funcionario funcionarioAndre = new Funcionario("Andre", "Advogado", 22000.0, "5");
+        Funcionario funcionario6 = new Funcionario("Fabiana", "Advogado", 22000.0, "6");
 
         // ArrayList
         ArrayList<Funcionario> funcionarios = new ArrayList<>();
@@ -23,6 +25,7 @@ public class Main {
         funcionarios.add(funcionarioAmora);
         funcionarios.add(funcionarioLara);
         funcionarios.add(funcionarioAndre);
+        funcionarios.add(funcionario6);
         int tamanhoDaLista = funcionarios.size();
 //        System.out.println("tamanho da lista: " + tamanhoDaLista);
 
@@ -122,5 +125,89 @@ public class Main {
 
             System.out.println("Chave: " + chave + "Nome: " + f.getNome());
         }
+
+        // DESAFIO SEMANA 2
+        Scanner leitor = new Scanner(System.in);
+        System.out.println("----- Menu ----- " + "\n" + "1 - Cadastrar funcionário" + "\n" + "2 - Listar funcionários" + "\n" + "3 - Buscar funcionário" + "\n" + "4 - Remover funcionário" + "\n" + "5 - Aumentar salário" + "\n" + "6 - Listar funcionários por cargo" + "\n" + "7 - Exibir quantidade" + "\n" + "8 - Buscar funcionário pelo ID" + "\n" + "9 - Sair" );
+        System.out.println("!! Digite uma opçao...");
+        int opcao = leitor.nextInt();
+//        System.out.println("opçao escolhida: " + opcao);
+//        leitor.close();
+        boolean encontrado = false;
+
+        switch(opcao) {
+            case 1:
+                System.out.println("opçao escolhida: " + opcao + " - Cadastrar funcionário");
+//                System.out.println("opçao escolhida: " + opcao);
+                Funcionario funcionarioNew = new Funcionario("Erika", "Jornalista", 5000.0, "6");
+                funcionarios.add(funcionarioNew);
+                funcionarioNew.exibirDados();
+                break;
+            case 2:
+                System.out.println("opçao escolhida: " + opcao + " - Listar funcionários");
+                for (Funcionario f: funcionarios){
+                    f.exibirDados();
+                }
+                break;
+            case 3:
+                System.out.println("opçao escolhida: " + opcao + " - Buscar funcionário");
+                System.out.println("digite nome para buscar: ");
+                String nome = leitor.next();
+//                leitor.close();
+                for (Funcionario f : funcionarios) {
+                    if (f.getNome().contains(nome)) {
+                        f.exibirDados();
+                        encontrado = true;
+                    }
+                }
+                if (!encontrado) {
+                    System.out.println("Funcionário " + nome + " não encontrado");
+                }
+                break;
+            case 4:
+                System.out.println("opçao escolhida: " + opcao + " - Remover funcionário");
+                System.out.println("digite nome para buscar: ");
+                String nomeExcluir = leitor.next();
+
+                Funcionario funcionarioExcluir = null;
+
+                for (Funcionario f : funcionarios) {
+                    if (f.getNome().contains(nomeExcluir)) {
+                        f.exibirDados();
+                        funcionarioExcluir = f;
+                    }
+                }
+                if (funcionarioExcluir == null) {
+                    System.out.println("Funcionário '" + nomeExcluir + "' não encontrado");
+                }else {
+                    funcionarios.remove(funcionarioExcluir);
+                    System.out.println("Funcionário '" + nomeExcluir + "' foi removido da lista");
+                }
+                break;
+            case 5:
+                // code block
+            case 6:
+                System.out.println("opçao escolhida: " + opcao + " - Listar funcionários por cargo");
+                break;
+            case 7:
+                System.out.println("opçao escolhida: " + opcao + " - Exibir quantidade");
+                System.out.println("A lista possui: " + funcionarios.size() + " funcionários");
+                break;
+            case 8:
+                System.out.println("opçao escolhida: " + opcao + " - Buscar funcionário pelo ID");
+                System.out.println("Digite o ID do funcionário: ...");
+                int idFunc = leitor.nextInt();
+                leitor.close();
+                if (idFunc > funcionarios.size()){
+                    System.out.println("ID inexistente");
+                } else {
+                    funcionarios.get(idFunc).exibirDados();
+                }
+                break;
+            default:
+                System.out.println("opçao escolhida: " + opcao + "\n"+ "saindo...");
+
+        }
+
     }
 }
