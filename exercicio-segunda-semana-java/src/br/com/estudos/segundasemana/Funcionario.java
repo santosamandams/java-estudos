@@ -1,10 +1,10 @@
 package br.com.estudos.segundasemana;
 
 public class Funcionario implements Identificavel {
-    String nome;
-    String cargo;
-    Double salario;
-    String id;
+    private String nome;
+    private String cargo;
+    private double salario;
+    private String id;
 
     public Funcionario(String nome, String cargo, Double salario, String id) {
 
