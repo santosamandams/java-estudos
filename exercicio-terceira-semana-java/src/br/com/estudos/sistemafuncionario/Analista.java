@@ -1,8 +1,26 @@
 package br.com.estudos.sistemafuncionario;
 
-public class Analista extends Funcionario{
+public class Analista extends Funcionario {
+    private String sistemaPrincipal;
+
+    public Analista(String id, String nome, double salario, String sistemaPrincipal) {
+        super(id, nome, salario);
+        this.sistemaPrincipal = sistemaPrincipal;
+    }
+
+//    @Override
+//    public void calcularBonus() {
+//        // bônus didático de 8%
+//    }
+
     @Override
-    public void calcularBonus() {
-        // bônus didático de 8%
+    public void calcularBonus(double salario, double percentual) {
+        double bonusCalculado = (salario * percentual) / 100;
+        System.out.println("O valor do bônus é: R$ " + bonusCalculado);
+    }
+
+    @Override
+    public void exibirTipo() {
+        System.out.println("Sou especialista no sistema: " + sistemaPrincipal);
     }
 }
