@@ -26,7 +26,7 @@ public class Funcionario implements Identificavel {
         return cargo;
     }
 
-    public Double getSalario(){
+    public double getSalario(){
         return salario;
     }
 
