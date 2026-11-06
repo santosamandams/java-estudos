@@ -51,5 +51,29 @@ public class Main {
         System.out.println(" \n ### Lista de salários ordenados - MAIOR -> MENOR ###");
         ordenadosPorSalario.forEach(ordenados -> System.out.println("Lista de salários ordenados " + ordenados.getNome() + " - R$ " + ordenados.getSalario()));
 
+        // count
+        long quantidadeDevs = ListaFuncionarios.stream()
+                .filter(lf -> lf.getCargo().equals("Desenvolvedor"))
+                .count();
+        System.out.println(" \n Existe " + quantidadeDevs + " desenvolvedor na lista");
+
+        // match
+        List<Funcionario> salarioMaior10k = ListaFuncionarios.stream()
+                .filter(lf -> lf.getSalario() > 10000 && lf.getSalario() > 0)
+                .toList();
+        System.out.println(" \n ### Pessoas que recebem mais de  10k ###");
+        salarioMaior10k.forEach(lf -> System.out.println(lf.getNome() + " - R$ " + lf.getSalario()));
+
+        // relatorio
+        System.out.println("----------- Relatório -----------");
+        System.out.println("Maior salario da lista, R$ " + ordenadosPorSalario.getFirst().getSalario());
+
+        double soma = 0;
+        int total = ordenadosPorSalario.size();
+        for (Funcionario ordenados : ordenadosPorSalario) {
+            soma = soma + ordenados.getSalario();
+        }
+        double mediaSalarios = soma/total;
+        System.out.println("Média de salarios, R$ " + String.format("%.2f", mediaSalarios));
     }
 }
