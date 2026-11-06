@@ -1,6 +1,6 @@
 package br.com.estudos.sistemafuncionario;
 
-abstract class Funcionario {
+public abstract class Funcionario {
     private String id;
     private String nome;
     private double salario;
