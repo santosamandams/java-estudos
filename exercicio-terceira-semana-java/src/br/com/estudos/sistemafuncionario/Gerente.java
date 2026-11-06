@@ -3,8 +3,8 @@ package br.com.estudos.sistemafuncionario;
 public class Gerente extends Funcionario{
     private int quantidadeDePessoas;
 
-    public Gerente(String id, String nome, double salario, int quantidadeDePessoas) {
-        super(id, nome, salario);
+    public Gerente(String id, String nome, double salario, int quantidadeDePessoas, String cargo) {
+        super(id, nome, salario, cargo);
         this.quantidadeDePessoas = quantidadeDePessoas;
     }
 
@@ -21,6 +21,6 @@ public class Gerente extends Funcionario{
 
     @Override
     public void exibirTipo() {
-        System.out.println("Eu gerencio " + quantidadeDePessoas + " pessoas");
+        System.out.println("Sou gerente de " + quantidadeDePessoas + " pessoas");
     }
 }

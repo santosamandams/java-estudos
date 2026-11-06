@@ -3,8 +3,8 @@ package br.com.estudos.sistemafuncionario;
 public class Analista extends Funcionario {
     private String sistemaPrincipal;
 
-    public Analista(String id, String nome, double salario, String sistemaPrincipal) {
-        super(id, nome, salario);
+    public Analista(String id, String nome, double salario, String sistemaPrincipal, String cargo) {
+        super(id, nome, salario, cargo);
         this.sistemaPrincipal = sistemaPrincipal;
     }
 
@@ -21,6 +21,6 @@ public class Analista extends Funcionario {
 
     @Override
     public void exibirTipo() {
-        System.out.println("Sou especialista no sistema: " + sistemaPrincipal);
+        System.out.println("Sou Analista especialista no sistema: " + sistemaPrincipal);
     }
 }

@@ -4,15 +4,17 @@ public abstract class Funcionario {
     private String id;
     private String nome;
     private double salario;
+    private String cargo;
 
-    public Funcionario(String id, String nome, double salario) {
+    public Funcionario(String id, String nome, double salario, String cargo) {
 
         if (salario <= 0.0) {
-            throw new IllegalArgumentException("salario nao pode ser negativo ou zero");
+            throw new SalarioInvalidoException("salario nao pode ser negativo ou zero");
         }
         this.nome = nome;
         this.salario = salario;
         this.id = id;
+        this.cargo = cargo;
     }
 
     public String getId(){
@@ -25,6 +27,10 @@ public abstract class Funcionario {
 
     public double getSalario(){
         return salario;
+    }
+
+    public String getCargo(){
+        return cargo;
     }
 
 //    public abstract void calcularBonus(double salario);
