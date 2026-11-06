@@ -3,8 +3,8 @@ package br.com.estudos.sistemafuncionario;
 public class Analista extends Funcionario {
     private String sistemaPrincipal;
 
-    public Analista(String id, String nome, double salario, String sistemaPrincipal, String cargo) {
-        super(id, nome, salario, cargo);
+    public Analista(String nome, double salario, String sistemaPrincipal, String cargo) {
+        super(nome, salario, cargo);
         this.sistemaPrincipal = sistemaPrincipal;
     }
 

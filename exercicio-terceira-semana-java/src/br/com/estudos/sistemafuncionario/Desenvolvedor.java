@@ -3,8 +3,8 @@ package br.com.estudos.sistemafuncionario;
 public class Desenvolvedor extends Funcionario {
     private String linguagemPrincipal;
 
-    public Desenvolvedor(String id, String nome, Double salario, String linguagemPrincipal, String cargo) {
-        super(id, nome, salario, cargo);
+    public Desenvolvedor(String nome, Double salario, String linguagemPrincipal, String cargo) {
+        super(nome, salario, cargo);
 
         this.linguagemPrincipal = linguagemPrincipal;
     }
@@ -22,5 +22,6 @@ public class Desenvolvedor extends Funcionario {
     @Override
     public void exibirTipo() {
         System.out.println("Desenvolvo linguagem principal: " + linguagemPrincipal);
+        System.out.println("ID: " + getId());
     }
 }

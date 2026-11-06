@@ -1,23 +1,24 @@
 package br.com.estudos.sistemafuncionario;
 
 public abstract class Funcionario {
-    private String id;
+    private static int contadorDeIds = 1;
+    private int id;
     private String nome;
     private double salario;
     private String cargo;
 
-    public Funcionario(String id, String nome, double salario, String cargo) {
+    public Funcionario(String nome, double salario, String cargo) {
 
         if (salario <= 0.0) {
             throw new SalarioInvalidoException("salario nao pode ser negativo ou zero");
         }
         this.nome = nome;
         this.salario = salario;
-        this.id = id;
+        this.id = contadorDeIds++;
         this.cargo = cargo;
     }
 
-    public String getId(){
+    public int getId(){
         return id;
     };
 

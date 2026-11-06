@@ -1,10 +1,10 @@
 package br.com.estudos.sistemafuncionario;
 
-public class Gerente extends Funcionario{
+public class Gerente extends Funcionario {
     private int quantidadeDePessoas;
 
-    public Gerente(String id, String nome, double salario, int quantidadeDePessoas, String cargo) {
-        super(id, nome, salario, cargo);
+    public Gerente(String nome, double salario, int quantidadeDePessoas, String cargo) {
+        super(nome, salario, cargo);
         this.quantidadeDePessoas = quantidadeDePessoas;
     }
 

@@ -9,9 +9,9 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
 
-        Desenvolvedor func1 = new Desenvolvedor("1", "Jaqueline", 5000.00, "Go", "Desenvolvedor");
-        Analista func2 = new Analista("2", "Joice", 15000.00, "Jira", "Analista");
-        Gerente func3 = new Gerente("3", "Patricia", 50000.00, 160, "Gerente");
+        Desenvolvedor func1 = new Desenvolvedor("Jaqueline", 5000.00, "Go", "Desenvolvedor");
+        Analista func2 = new Analista("Joice", 15000.00, "Jira", "Analista");
+        Gerente func3 = new Gerente("Patricia", 50000.00, 160, "Gerente");
 
         List<Funcionario> ListaFuncionarios = new ArrayList<>();
         ListaFuncionarios.add(func1);
@@ -37,7 +37,7 @@ public class Main {
         salariosAltos.forEach(lf -> System.out.println("Lista de salários maiorires " + lf.getNome() + " - R$ " + lf.getSalario()));
 
         // map (chave + valor)
-        Map<String, Funcionario> nomeFuncionsariosMap = new HashMap<>();
+        Map<Integer, Funcionario> nomeFuncionsariosMap = new HashMap<>();
         nomeFuncionsariosMap.put(func1.getId(), func1);
         nomeFuncionsariosMap.put(func2.getId(), func2);
         nomeFuncionsariosMap.put(func3.getId(), func3);
@@ -65,7 +65,7 @@ public class Main {
         salarioMaior10k.forEach(lf -> System.out.println(lf.getNome() + " - R$ " + lf.getSalario()));
 
         // relatorio
-        System.out.println("----------- Relatório -----------");
+        System.out.println("\n ----------- Relatório -----------");
         System.out.println("Maior salario da lista, R$ " + ordenadosPorSalario.getFirst().getSalario());
 
         double soma = 0;
@@ -73,7 +73,7 @@ public class Main {
         for (Funcionario ordenados : ordenadosPorSalario) {
             soma = soma + ordenados.getSalario();
         }
-        double mediaSalarios = soma/total;
+        double mediaSalarios = soma / total;
         System.out.println("Média de salarios, R$ " + String.format("%.2f", mediaSalarios));
     }
 }
